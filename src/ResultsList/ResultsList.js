@@ -13,12 +13,6 @@ class ResultsList extends Component {
                 {results}
             </div>
         )
-/*
-        return (
-            <div>
-                <p>results list</p>
-            </div>
-        )*/
     }
 }
 

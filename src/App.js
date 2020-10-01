@@ -32,7 +32,6 @@ class App extends Component {
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.state.searchTerm}&printType=${this.state.printType}&langRestrict=${this.state.bookLang}&key=AIzaSyBOeruDKJNHHtogFGbr2xL3Op_BrBv0qGU`)
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         const dataItems = data.items
         this.setState({
           booksResponse: dataItems
