@@ -29,7 +29,7 @@ class App extends Component {
     })
   }
   componentDidMount() {
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.state.searchTerm}&printType=${this.state.printType}&key=AIzaSyBOeruDKJNHHtogFGbr2xL3Op_BrBv0qGU`)
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.state.searchTerm}&printType=${this.state.printType}&langRestrict=${this.state.bookLang}&key=AIzaSyBOeruDKJNHHtogFGbr2xL3Op_BrBv0qGU`)
       .then(response => response.json())
       .then(data => {
         console.log(data)
@@ -44,8 +44,6 @@ class App extends Component {
       <main className="App">
         <Header />
         <SearchForm
-          searchTerm={this.state.searchTerm}
-          filterOption={this.state.filterOption}
           handleUpdate={term => this.setSearchTerm(term)}
           handlePrintType={printOption => this.setPrintType(printOption)}
           handleBookType={lang => this.setBookType(lang)}
