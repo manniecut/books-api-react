@@ -9,7 +9,8 @@ class App extends Component {
     this.state = {
       searchTerm: "law of one",
       booksResponse: [],
-      filter: null
+      printType: "all",
+      bookLang: "en"
     }
   }
   setSearchTerm = (term) => {
@@ -17,10 +18,21 @@ class App extends Component {
       searchTerm: term
     })
   }
+  setPrintType = (printOption) => {
+    this.setState({
+      PrintType: printOption
+    })
+  }
+  setBookType = (lang) => {
+    this.setState({
+      bookLang: lang
+    })
+  }
   componentDidMount() {
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.state.searchTerm}`)
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.state.searchTerm}&printType=${this.state.printType}&key=AIzaSyBOeruDKJNHHtogFGbr2xL3Op_BrBv0qGU`)
       .then(response => response.json())
       .then(data => {
+        console.log(data)
         const dataItems = data.items
         this.setState({
           booksResponse: dataItems
@@ -35,6 +47,8 @@ class App extends Component {
           searchTerm={this.state.searchTerm}
           filterOption={this.state.filterOption}
           handleUpdate={term => this.setSearchTerm(term)}
+          handlePrintType={printOption => this.setPrintType(printOption)}
+          handleBookType={lang => this.setBookType(lang)}
         />
         <ResultsList
           results={this.props.booksResponse}

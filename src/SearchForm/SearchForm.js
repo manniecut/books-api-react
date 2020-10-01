@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FilterResults from './FilterResults';
 import './SearchForm.css';
 
 class SearchForm extends Component {
@@ -13,9 +14,13 @@ class SearchForm extends Component {
                 <input
                     type="text"
                     id="searchInput"
-                    name="searchInput" 
-                    />
+                    name="searchInput"
+                />
                 <button type="submit">Search</button>
+                <FilterResults
+                    handlePrintType={this.props.handlePrintType}
+                    handleBookType={this.props.handleBookType}
+                />
             </form>
         )
     }
