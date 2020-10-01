@@ -20,7 +20,7 @@ class App extends Component {
   }
   setPrintType = (printOption) => {
     this.setState({
-      PrintType: printOption
+      printType: printOption
     })
   }
   setBookType = (lang) => {
