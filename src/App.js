@@ -49,7 +49,7 @@ class App extends Component {
           handleBookType={lang => this.setBookType(lang)}
         />
         <ResultsList
-          results={this.props.booksResponse}
+          booksResponse={this.props.booksResponse}
         />
       </main>
     );

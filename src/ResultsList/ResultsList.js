@@ -4,13 +4,22 @@ import ResultItem from './ResultItem';
 
 class ResultsList extends Component {
     render() {
+        //const results = this.props.booksResponse
+            //.map((result, i) => <ResultItem {...result} key={i} />)
+        console.log(this.props);
+
         return (
-            <div>
-                <ResultItem />
-                <ResultItem />
-                <ResultItem />
+            <div className="resultsList">
+                <ResultItem 
+                 booksResponse={this.props.booksResponse}/>
             </div>
         )
+/*
+        return (
+            <div>
+                <p>results list</p>
+            </div>
+        )*/
     }
 }
 

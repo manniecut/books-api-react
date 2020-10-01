@@ -2,14 +2,6 @@ import React, { Component } from 'react';
 import './FilterResults.css';
 
 class FilterResults extends Component {
-    handlePType(value) {
-        console.log('handled P ' + value)
-    }
-    handleBType(value) {
-        console.log('handled B ' + value)
-    }
-
-
     render() {
         return (
             <div id="filters" className="filters">
