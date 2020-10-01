@@ -7,7 +7,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchTerm: "law of one",
+      searchTerm: "hitchhiker's guide",
       booksResponse: [],
       printType: "all",
       bookLang: "en"
@@ -49,7 +49,7 @@ class App extends Component {
           handleBookType={lang => this.setBookType(lang)}
         />
         <ResultsList
-          booksResponse={this.props.booksResponse}
+          booksResponse={this.state.booksResponse}
         />
       </main>
     );

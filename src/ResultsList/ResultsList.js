@@ -4,14 +4,13 @@ import ResultItem from './ResultItem';
 
 class ResultsList extends Component {
     render() {
-        //const results = this.props.booksResponse
-            //.map((result, i) => <ResultItem {...result} key={i} />)
+        const results = this.props.booksResponse
+            .map((result, i) => <ResultItem {...result} key={i} />)
         console.log(this.props);
 
         return (
             <div className="resultsList">
-                <ResultItem 
-                 booksResponse={this.props.booksResponse}/>
+                {results}
             </div>
         )
 /*
