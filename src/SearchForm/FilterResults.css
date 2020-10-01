@@ -1,8 +1,5 @@
-form>.filters {
+div>.filters {
     background-color: lightgrey;
-    font-family: sans-serif;
-    text-align: center;
-    padding: 5px;
-    font-size: 18px;
-    margin:0;
+    padding:5px;
+    margin-top: 5px;
 }

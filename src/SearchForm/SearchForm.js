@@ -17,10 +17,12 @@ class SearchForm extends Component {
                     name="searchInput"
                 />
                 <button type="submit">Search</button>
+                <div>
                 <FilterResults
                     handlePrintType={this.props.handlePrintType}
                     handleBookType={this.props.handleBookType}
                 />
+                </div>
             </form>
         )
     }
