@@ -4,6 +4,7 @@ import './SearchForm.css';
 
 class SearchForm extends Component {
     onSubmitForm = (e) => {
+        console.log('onsubmitform')
         e.preventDefault()
         this.props.handleUpdate(e.target.searchInput.value)
     }

@@ -17,6 +17,7 @@ class App extends Component {
     this.setState({
       searchTerm: term
     })
+    this.fetchFunction();
   }
   setPrintType = (printOption) => {
     this.setState({
@@ -28,15 +29,26 @@ class App extends Component {
       bookLang: lang
     })
   }
-  componentDidMount() {
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.state.searchTerm}&printType=${this.state.printType}&langRestrict=${this.state.bookLang}&key=AIzaSyBOeruDKJNHHtogFGbr2xL3Op_BrBv0qGU`)
+  fetchFunction = () => {
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${this.state.searchTerm}&printType=${this.state.printType}&langRestrict=${this.state.bookLang}&key=AIzaSyBOeruDKJNHHtogFGbr2xL3Op_BrBv0qGU`
+    console.log(url);
+    fetch(url)
       .then(response => response.json())
       .then(data => {
         const dataItems = data.items
         this.setState({
           booksResponse: dataItems
         })
+        console.log('fetched vvv')
+        console.log(dataItems)
       });
+  }
+  componentDidMount() {
+    console.log('componentDidMount')
+    this.fetchFunction();
+  }
+  componentDidUpdate() {
+    console.log('componentDidUpdate')
   }
   render() {
     return (
